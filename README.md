@@ -29,7 +29,7 @@ new Trigger({
 You can easily create a new project interactively based on this template by running:
 
 ```sh
-npm create trigger@latest hello-world
+npx create-trigger@latest hello-world
 # or
 yarn create trigger hello-world
 # or
