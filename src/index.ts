@@ -15,3 +15,19 @@ new Trigger({
     await ctx.logger.info("Hello world from inside trigger.dev");
   },
 }).listen();
+
+new Trigger({
+  // Give your Trigger a stable ID
+  id: "hello-world-2",
+  name: "Template: Hello World 2",
+  // Trigger on the custom event named "your.event.2", see https://docs.trigger.dev/triggers/custom-events
+  on: customEvent({
+    name: "your.event.2",
+  }),
+  // The run functions gets called once per "your.event" event
+  async run(event, ctx) {
+    await ctx.waitFor("waiting...", { seconds: 10 });
+
+    await ctx.logger.info("Hello world 2 from inside trigger.dev");
+  },
+}).listen();
